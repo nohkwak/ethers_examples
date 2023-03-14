@@ -1,29 +1,25 @@
 const { ethers } = require("ethers");
+const fs = require('fs')
 
-const INFURA_ID = ''
-const provider = new ethers.providers.JsonRpcProvider(`https://mainnet.infura.io/v3/${INFURA_ID}`)
+const provider = new ethers.providers.JsonRpcProvider("https://api.baobab.klaytn.net:8651")
 
-const ERC20_ABI = [
-    "function name() view returns (string)",
-    "function symbol() view returns (string)",
-    "function totalSupply() view returns (uint256)",
-    "function balanceOf(address) view returns (uint)",
-];
+const TOKEN_ADDRESS = '0xaa0A40391Df2eD1bd2A3FE3b9AC869619Cc4eD8e' 
 
-const address = '0x6B175474E89094C44Da98b954EedeAC495271d0F' // DAI Contract
-const contract = new ethers.Contract(address, ERC20_ABI, provider)
+const TOKEN_ABI = JSON.parse(fs.readFileSync('../build/ServiceChainToken.abi', 'utf8'));
+
+const contract = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider)
 
 const main = async () => {
-    const name = await contract.name()
-    const symbol = await contract.symbol()
+    const name = await contract.NAME()
+    const symbol = await contract.SYMBOL()
     const totalSupply = await contract.totalSupply()
 
-    console.log(`\nReading from ${address}\n`)
+    console.log(`\nReading from ${TOKEN_ADDRESS}`)
     console.log(`Name: ${name}`)
     console.log(`Symbol: ${symbol}`)
-    console.log(`Total Supply: ${totalSupply}\n`)
+    console.log(`Total Supply: ${totalSupply}`)
 
-    const balance = await contract.balanceOf('0x6c6Bc977E13Df9b0de53b251522280BB72383700')
+    const balance = await contract.balanceOf('0x3208ca99480f82bfe240ca6bc06110cd12bb6366')
 
     console.log(`Balance Returned: ${balance}`)
     console.log(`Balance Formatted: ${ethers.utils.formatEther(balance)}\n`)

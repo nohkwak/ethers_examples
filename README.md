@@ -6,7 +6,7 @@ To test Klaytn with ethers.js
 - Javascript (Writing scripts)
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [Node.js](https://nodejs.org/en/) (To run our scripts and install ethers.js)
-- [Baobob](https://api.baobab.klaytn.net:8651) (Klaytn Test Net)
+- [Baobob](https://baobab.scope.klaytn.com/) https://api.baobab.klaytn.net:8651 (Klaytn Test Net)
 
 ## Setting Up
 ### 1. Clone/Download the Repository
