@@ -1,12 +1,11 @@
 const { ethers } = require("ethers");
 
-const INFURA_ID = ''
-const provider = new ethers.providers.JsonRpcProvider(`https://kovan.infura.io/v3/${INFURA_ID}`)
+const provider = new ethers.providers.JsonRpcProvider('https://api.baobab.klaytn.net:8651')
 
-const account1 = '' // Your account address 1
-const account2 = '' // Your account address 2
+const account1 = '0x3208ca99480f82bfe240ca6bc06110cd12bb6366' // sender address 
+const account2 = '0xc40b6909eb7085590e1c26cb3becc25368e249e9' // reciever address 
 
-const privateKey1 = '' // Private key of account 1
+const privateKey1 = '' // Private key of sender 
 const wallet = new ethers.Wallet(privateKey1, provider)
 
 const main = async () => {
@@ -18,7 +17,7 @@ const main = async () => {
 
     const tx = await wallet.sendTransaction({
         to: account2,
-        value: ethers.utils.parseEther("0.025")
+        value: 1000
     })
 
     await tx.wait()
