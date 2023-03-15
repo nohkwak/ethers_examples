@@ -5,7 +5,7 @@ const provider = new ethers.providers.JsonRpcProvider('https://api.baobab.klaytn
 const account1 = '0x3208ca99480f82bfe240ca6bc06110cd12bb6366' // sender address 
 const account2 = '0xc40b6909eb7085590e1c26cb3becc25368e249e9' // reciever address 
 
-const privateKey1 = '' // Private key of sender 
+const privateKey1 = '0xb3cf575dea0081563fe5482de2fe4425e025502b1f4ae7e02b2540ac0a5beda1' // Private key of sender 
 const wallet = new ethers.Wallet(privateKey1, provider)
 
 const main = async () => {
