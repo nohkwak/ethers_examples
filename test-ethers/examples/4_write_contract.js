@@ -6,12 +6,12 @@ const provider = new ethers.providers.JsonRpcProvider('https://api.baobab.klaytn
 const account1 = '0x3208ca99480f82bfe240ca6bc06110cd12bb6366' // sender address 
 const account2 = '0xc40b6909eb7085590e1c26cb3becc25368e249e9' // reciever address 
 
-const privateKey1 = '' // Private key of sender 
+const privateKey1 = fs.readFileSync('../privateKey', 'utf8') // Private key of sender 
 const wallet = new ethers.Wallet(privateKey1, provider)
 
 const TOKEN_ADDRESS = '0xaa0A40391Df2eD1bd2A3FE3b9AC869619Cc4eD8e'
 
-const TOKEN_ABI = JSON.parse(fs.readFileSync('./contracts/ServiceChainToken.abi', 'utf8'));
+const TOKEN_ABI = JSON.parse(fs.readFileSync('../contracts/ServiceChainToken.abi', 'utf8'));
 
 const contract = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider)
 
