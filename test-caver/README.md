@@ -1,10 +1,10 @@
-# Ethers.js by Example
-To test Klaytn with ethers.js
+# Caver by Example
+To test Klaytn with caver.js
 
 ## Technology Stack & Tools
 
 - Javascript (Writing scripts)
-- [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
+- [Caver.js](https://github.com/klaytn/caver-js) (Blockchain Interaction)
 - [Node.js](https://nodejs.org/en/) (To run our scripts and install ethers.js)
 - [Baobob](https://baobab.scope.klaytn.com/) https://api.baobab.klaytn.net:8651 (Klaytn Test Net)
 
@@ -13,14 +13,13 @@ To test Klaytn with ethers.js
 
 ### 2. Install Dependencies:
 ```
-$ cd test-ethers
 $ npm install
 ```
 
 ## Run scripts
 
 ### 1_accounts.js - Reads balance of KLAY of wallet address
-- Input your wallet address
+- Replace address with your wallet address
 ```
 $ node examples/1_accounts.js
 ```
@@ -45,7 +44,7 @@ $ node examples/3_send_signed_transaction.js
 $ node examples/4_deploy_contract.js
 ```
 
-### 5_write_contract.js - Transfers entire balance of token of your choosing from account1 to account2 (on Baobob testnet)
+### 5_write_contract.js - Transfers some token of your choosing from account1 to account2 (on Baobob testnet)
 - Input your account1 public key
 - Input your account2 public key
 - Input your account1 private key
