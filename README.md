@@ -1,4 +1,4 @@
-# Testcase for SDK
+# Blockchain SDK by Example
 To test Klaytn with ethers.js, web3.js and caver.js
 
 ## Technology Stack & Tools
