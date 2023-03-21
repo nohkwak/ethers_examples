@@ -20,14 +20,6 @@ const main = async () => {
     console.log(`reciever balance before: `)
     await caver.rpc.klay.getBalance(account2).then( console.log );
 
-    // const tx = await caver.transaction.legacyTransaction.create({
-    //     from: account1,
-    //     to: account2,
-    //     value: 1000,
-    //     gas: 25000
-    // });
-    // console.log( tx )
-
     const tx = caver.transaction.valueTransfer.create({
         from: account1,
         to: account2,
@@ -36,14 +28,23 @@ const main = async () => {
     });
     console.log( tx )
 
+    // // same to above  
+    // 
+    // const tx = await caver.transaction.legacyTransaction.create({
+    //     from: account1,
+    //     to: account2,
+    //     value: 1000,
+    //     gas: 25000
+    // });
+    // console.log( tx )
+
     const signed = await caver.wallet.sign(account1, tx)
     console.log( signed )
 
     const receipt = await caver.rpc.klay.sendRawTransaction(signed)
     console.log( receipt )
 
-    // 
-    // not working
+    // // not working
     // 
     // await caver.rpc.klay.sendTransaction(tx)
     // .on('receipt', r => {

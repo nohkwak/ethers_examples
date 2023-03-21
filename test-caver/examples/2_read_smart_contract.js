@@ -1,6 +1,6 @@
-const Caver = require("caver-js");
 const fs = require('fs')
 
+const Caver = require("caver-js");
 const caver = new Caver("https://api.baobab.klaytn.net:8651")
 
 const TOKEN_ABI = JSON.parse(fs.readFileSync('../contracts/ServiceChainToken.abi', 'utf8'));
