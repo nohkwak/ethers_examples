@@ -38,8 +38,8 @@ const main = async () => {
     await caver.rpc.klay.getChainConfig('latest').then( console.log );
     // await caver.rpc.klay.getChainConfig().then( console.log );   
 
-    console.log(`\nklay.gasPriceAt`)
-    await caver.rpc.klay.gasPriceAt(block).then( console.log );
+    console.log(`\nklay.getGasPriceAt`)
+    await caver.rpc.klay.getGasPriceAt(block).then( console.log );
 
     console.log(`\nklay.getGasPrice`)
     await caver.rpc.klay.getGasPrice().then( console.log );
